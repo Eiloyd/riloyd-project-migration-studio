@@ -1,9 +1,10 @@
 # Roadmap
 
-- [ ] Optimize all website images, prioritizing Young Innovators, restore localhost rendering and use the two supplied images.
-- [ ] Fix the reported missing Young Innovators poster in standalone localhost with a bundled optimized image.
-- [ ] Update Young Innovators search/share metadata and add public sitemap; verify Google indexing access.
-- [ ] Add admin student registration table review with approve/reject and verify signed-in persistence.
+- [x] Check 223 website images; compress where smaller, optimize Young Innovators imagery and preserve dimensions/transparency.
+- [x] Bundle optimized supplied poster and showcase; desktop/mobile localhost screenshots confirm both render.
+- [x] Update Young Innovators title, description and 1200×630 share image; create 26-page sitemap without fabricated lastmod.
+- [ ] Complete Google Search Console verification/submission; awaiting connection and publication.
+- [x] Student form submission, admin table, approve/reject and reload persistence verified with one clearly labeled QA record.
 
 - [x] Create requested account, verify confirmed email and activate first-admin through secure claim; signed-in admin tabs and reload verified.
 
