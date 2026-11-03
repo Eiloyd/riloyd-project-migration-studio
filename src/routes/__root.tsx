@@ -40,6 +40,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "google-site-verification", content: "H2ZVxeKFo_fBc56xeMXt4pGtJaQb4_ocDIAz5Oy_psc" },
       { title: "Riloyd — Business Funding, Strategy & Transformation" },
       { name: "description", content: "Riloyd helps startups and businesses grow with funding support, strategy, mentorship and transformation services." },
       { name: "author", content: "Riloyd" },
