@@ -3,7 +3,7 @@
 - [x] Check 223 website images; compress where smaller, optimize Young Innovators imagery and preserve dimensions/transparency.
 - [x] Bundle optimized supplied poster and showcase; desktop/mobile localhost screenshots confirm both render.
 - [x] Update Young Innovators title, description and 1200×630 share image; create 26-page sitemap without fabricated lastmod.
-- [ ] Complete Google Search Console verification/submission; awaiting connection and publication.
+- [ ] Complete Google Search Console verification/submission: connected account and verification tag prepared; publication declined, so live verification and sitemap submission cannot proceed.
 - [x] Student form submission, admin table, approve/reject and reload persistence verified with one clearly labeled QA record.
 
 - [x] Create requested account, verify confirmed email and activate first-admin through secure claim; signed-in admin tabs and reload verified.
