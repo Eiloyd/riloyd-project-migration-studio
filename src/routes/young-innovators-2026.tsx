@@ -9,9 +9,12 @@ import { YoungInnovatorsHero } from "@/components/young-innovators-hero";
 import trophy from "@/assets/young-innovators-trophy-2026.site-opt.webp";
 import ideaLab from "@/assets/young-innovators-idea-lab-2026.site-opt.webp";
 import newShowcase from "@/assets/young-innovators-showcase-2026.site-opt.webp";
-import suppliedShowcase from "@/assets/young-innovators-showcase-local.webp";
-import share from "@/assets/young-innovators-share-2026.jpg.asset.json";
-import hero from "@/assets/young-innovators-poster-local.webp";
+import suppliedShowcase from "@/assets/young-innovators-showcase-refreshed-1920.webp";
+import showcase1280 from "@/assets/young-innovators-showcase-refreshed-1280.webp";
+import showcase768 from "@/assets/young-innovators-showcase-refreshed-768.webp";
+import hero from "@/assets/young-innovators-hero-refreshed-1920.webp";
+import hero1280 from "@/assets/young-innovators-hero-refreshed-1280.webp";
+import hero768 from "@/assets/young-innovators-hero-refreshed-768.webp";
 
 const MarketAdvisor = lazy(() => import("@/components/young-innovators-tools").then(m => ({ default: m.StudentMarketAdvisor })));
 const Registration = lazy(() => import("@/components/young-innovators-tools").then(m => ({ default: m.StudentRegistration })));
@@ -21,11 +24,10 @@ const ProjectIdeas = lazy(() => import("@/components/student-project-ideas").the
 const title = "Young Innovators Challenge 2026 | Riloyd India";
 const description = "Join Riloyd Young Innovators Challenge 2026 for Classes 6–12 in India. Explore startup ideas, AI project guidance, fees, rewards and guardian-consented registration.";
 const pageUrl = "https://riloyd-project-migration-studio.lovable.app/young-innovators-2026";
-const shareUrl = `https://riloyd-project-migration-studio.lovable.app${share.url}`;
 
 export const Route = createFileRoute("/young-innovators-2026")({
   staticData: { sitemap: true },
-  head: () => ({ meta: [{ title }, { name: "description", content: description }, { property: "og:title", content: title }, { property: "og:description", content: description }, { property: "og:type", content: "website" }, { property: "og:url", content: pageUrl }, { property: "og:image", content: shareUrl }, { property: "og:image:width", content: "1200" }, { property: "og:image:height", content: "630" }, { property: "og:image:alt", content: "Riloyd Young Innovators Challenge 2026 — Big Ideas. Brighter Bharat." }, { name: "twitter:image", content: shareUrl }, { name: "twitter:card", content: "summary_large_image" }], links: [{ rel: "canonical", href: pageUrl }, { rel: "preload", as: "image", href: hero }] }),
+  head: () => ({ meta: [{ title }, { name: "description", content: description }, { property: "og:title", content: title }, { property: "og:description", content: description }, { property: "og:type", content: "website" }, { property: "og:url", content: pageUrl }, { name: "twitter:card", content: "summary_large_image" }], links: [{ rel: "canonical", href: pageUrl }, { rel: "preload", as: "image", href: hero, imageSrcSet: `${hero768} 768w, ${hero1280} 1280w, ${hero} 1920w`, imageSizes: "100vw" }] }),
   component: YoungInnovatorsPage,
 });
 
@@ -73,7 +75,7 @@ function YoungInnovatorsPage() {
 
     <Section id="registration" kicker="Your first step" heading="Register your student startup idea." surface><div className="grid gap-10 lg:grid-cols-[1.5fr_1fr]"><DeferredContent fallback={<p className="text-sm text-muted-foreground">Loading student registration…</p>}><Suspense fallback={<p>Loading registration…</p>}><Registration /></Suspense></DeferredContent><div className="border-l-2 border-primary pl-6"><ShieldCheck className="text-primary" size={30} /><h3 className="mt-4 text-xl font-bold">Students. Ideas. A stronger India.</h3><ul className="mt-5 space-y-4 text-sm text-muted-foreground"><li>For Classes 6–12 with original business or startup ideas.</li><li>A parent or guardian gives consent and provides their own contact details.</li><li>Registration stays private in the Riloyd admin inbox.</li><li>AI guidance is optional and separate from registration.</li><li>No automatic selection based on video likes.</li></ul></div></div></Section>
 
-    <section className="border-b border-border"><img src={suppliedShowcase} width={1920} height={640} loading="lazy" decoding="async" alt="School students exploring a Riloyd innovation showcase at India Gate" className="block h-auto w-full" /></section>
+    <section className="border-b border-border"><img src={suppliedShowcase} srcSet={`${showcase768} 768w, ${showcase1280} 1280w, ${suppliedShowcase} 1920w`} sizes="100vw" width={1920} height={640} loading="lazy" decoding="async" alt="School students exploring a Riloyd innovation showcase at India Gate" className="block h-auto w-full" /></section>
 
     <Section id="faqs" kicker="A clear start" heading="Questions before your student startup pitch?">
       <Accordion type="single" collapsible>{[["Who is this page for?", "This page is for school students in Classes 6–12 who have business or startup ideas. It is not an application page for existing adult businesses or founders."], ["Do I need a working prototype?", "A sketch, model or clear explanation can help you prepare your idea. You do not need to present an established business to explore the challenge. Confirm final entry requirements with Riloyd."], ["Is this the Startup Funding Programme?", "No. This initiative is separate from the Startup Funding and Prototype & Seed Funding programmes. Their fees and application terms do not automatically apply here."], ["Is registration open now?", "The student registration form is available on this page. Complete it with a parent or guardian and keep the reference number. No payment is collected here; confirm the final programme dates and payment instructions with the team."], ["Is funding or selection guaranteed?", "No. Published rewards are subject to the programme’s evaluation and terms. Registration, AI advice and video likes do not guarantee selection, funding or a prize."]].map(([q, a], i) => <AccordionItem key={q} value={`faq-${i}`}><AccordionTrigger className="text-left text-sm font-bold">{q}</AccordionTrigger><AccordionContent className="text-sm leading-relaxed text-muted-foreground">{a}</AccordionContent></AccordionItem>)}</Accordion>
