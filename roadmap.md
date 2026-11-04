@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Refresh the Young Innovators hero and exhibition image above “A clear start” with RILOYD branding; optimize and verify both locally.
+- [x] Refresh the Young Innovators hero and exhibition image above “A clear start” with RILOYD branding; optimized local images verified at desktop, tablet and phone widths.
 
 - [x] Check 223 website images; compress where smaller, optimize Young Innovators imagery and preserve dimensions/transparency.
 - [x] Bundle optimized supplied poster and showcase; desktop/mobile localhost screenshots confirm both render.
