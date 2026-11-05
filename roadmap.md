@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Refresh all remaining Young Innovators supporting artwork to match the approved RILOYD hero/exhibition style; optimize and verify image loading.
+- [x] Refresh all remaining Young Innovators supporting artwork to match the approved RILOYD hero/exhibition style; all six images loaded at desktop, tablet and phone widths with no overflow.
 
 - [x] Refresh the Young Innovators hero and exhibition image above “A clear start” with RILOYD branding; optimized local images verified at desktop, tablet and phone widths.
 
