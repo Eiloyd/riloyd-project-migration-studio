@@ -164,6 +164,41 @@
   --input: oklch(0.81 0.005 80);
   --ring: oklch(0.53 0.22 28);
 }
+/* Seasonal theme is isolated and removable; dark/light tokens remain intact. */
+.diwali {
+  --background: oklch(0.13 0.012 25);
+  --footer: oklch(0.1 0.012 25);
+  --surface: oklch(0.19 0.023 25);
+  --foreground: oklch(0.97 0.025 85);
+  --soft: oklch(0.87 0.04 85);
+  --primary: oklch(0.84 0.16 85);
+  --primary-foreground: oklch(0.17 0.025 25);
+  --muted-foreground: oklch(0.82 0.035 85);
+  --border: oklch(0.44 0.075 75);
+  --input: oklch(0.44 0.075 75);
+  --ring: oklch(0.84 0.16 85);
+  --festival-glow: 0 0 20px oklch(0.84 0.16 85 / .24);
+  --festival-text-glow: 0 0 18px oklch(0.84 0.16 85 / .22);
+}
+.diwali .young-challenge-page {
+  --background: oklch(0.13 0.012 25);
+  --surface: oklch(0.19 0.023 25);
+  --foreground: oklch(0.97 0.025 85);
+  --primary: oklch(0.84 0.16 85);
+  --primary-foreground: oklch(0.17 0.025 25);
+  --muted-foreground: oklch(0.82 0.035 85);
+  --border: oklch(0.44 0.075 75);
+  --input: oklch(0.44 0.075 75);
+  --challenge-gold: oklch(0.89 0.15 85);
+  --challenge-wine: oklch(0.24 0.06 25);
+  --challenge-glow: var(--festival-glow);
+}
+.diwali-decoration { height: 74px; overflow: hidden; border-top: 1px solid var(--border); pointer-events: none; }
+.diwali :is(h1,h2,h3) { text-shadow: var(--festival-text-glow); }
+.diwali [data-slot="button"]:not([data-variant="ghost"]):focus-visible { box-shadow: var(--festival-glow); }
+.diwali .young-challenge-page :is(#journey li,#fees-rewards article) { box-shadow: var(--festival-glow); }
+.diwali header { border-bottom-color: var(--primary); }
+@media (max-width: 639px) { .diwali-decoration { height: 58px; } }
 .light section:has(> img.absolute), .light .why-panel:has(> img.absolute) {
   --background: oklch(0.055 0 0);
   --foreground: oklch(0.985 0 0);

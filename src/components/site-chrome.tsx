@@ -1,7 +1,9 @@
 import { CountryLogo } from "@/components/country-logo";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ArrowRight, Instagram, Linkedin, Menu, Moon, Sun } from "lucide-react";
+import { ArrowRight, Instagram, Linkedin, Menu, Moon, Sun, Flame } from "lucide-react";
+import { applySiteTheme, nextSiteTheme, readSiteTheme, type SiteTheme } from '@/lib/site-theme';
+import diwaliLights from '@/assets/diwali-lights.webp';
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/local/riloyd-logo.png.optimized.nav.webp";
 import darkLogoAsset from "@/assets/local/riloyd-logo-dark.png.optimized.nav.webp";
@@ -16,23 +18,21 @@ export function SiteHeader() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const isGlobalPage = pathname.startsWith("/global-presence");
   const activeMarket = isGlobalPage ? findMarket(pathname.split("/")[2] ?? "") : undefined;
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<SiteTheme>("dark");
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem("riloyd-theme");
-    const next = stored === "dark" || stored === "light" ? stored : "dark";
+    const next = readSiteTheme(stored);
     setTheme(next);
-    document.documentElement.classList.toggle("light", next === "light");
-    document.documentElement.style.colorScheme = next;
+    applySiteTheme(next);
   }, []);
 
   function toggleTheme() {
-    const next = theme === "dark" ? "light" : "dark";
+    const next = nextSiteTheme(theme);
     setTheme(next);
     localStorage.setItem("riloyd-theme", next);
-    document.documentElement.classList.toggle("light", next === "light");
-    document.documentElement.style.colorScheme = next;
+    applySiteTheme(next);
   }
 
   const navItems = [
@@ -49,7 +49,7 @@ export function SiteHeader() {
         {navItems.map((item) => activeMarket && activeMarket.slug !== "india" && item.label === "Services" ? <Link key={item.label} to="/global-presence/$slug" params={{ slug: activeMarket.slug }} hash="services" className="nav-link">Services</Link> : <Link key={item.label} to={item.to} className={`nav-link ${pathname === item.to ? "nav-active" : ""}`}>{item.label}</Link>)}
       </nav>
       <div className="flex shrink-0 items-center gap-2">
-        <Button type="button" variant="ghost" size="icon" className="h-9 w-9" onClick={toggleTheme} aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`} title={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}>{theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}</Button>
+        <Button type="button" variant="ghost" size="icon" className="h-9 w-9" onClick={toggleTheme} aria-label={`Switch to ${nextSiteTheme(theme)} theme`} title={`Switch to ${nextSiteTheme(theme)} theme`}>{theme === "dark" ? <Sun className="h-4 w-4" /> : theme === "light" ? <Flame className="h-4 w-4" /> : <Moon className="h-4 w-4" />}</Button>
         <Button asChild variant="outline" className="hidden h-8 rounded-full border-primary px-4 text-[11px] font-bold lg:inline-flex"><Link to="/register">Register Now <ArrowRight size={14} /></Link></Button>
         <Button type="button" variant="ghost" size="icon" className="h-9 w-9 lg:hidden" aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><Menu size={19} /></Button>
       </div>
@@ -58,6 +58,7 @@ export function SiteHeader() {
       {navItems.map((item) => activeMarket && activeMarket.slug !== "india" && item.label === "Services" ? <Link key={item.label} to="/global-presence/$slug" params={{ slug: activeMarket.slug }} hash="services" onClick={() => setMenuOpen(false)} className="border-b border-border py-3 text-sm font-semibold">Services</Link> : <Link key={item.label} to={item.to} onClick={() => setMenuOpen(false)} className="border-b border-border py-3 text-sm font-semibold last:border-0">{item.label}</Link>)}
       <Link to="/register" onClick={() => setMenuOpen(false)} className="py-3 text-sm font-bold text-primary">Register Now →</Link>
     </nav>}
+    {theme === 'diwali' && <div className="diwali-decoration" aria-hidden="true"><img src={diwaliLights} width={1280} height={427} alt="" decoding="async" className="h-full w-full object-cover" /></div>}
   </header>;
 }
 

@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Optimize current Young Innovators images without changing artwork; saved 382,522 bytes across responsive variants.
+- [x] Add a removable third glowing Diwali theme through the existing switch; theme cycle, persistence, unchanged text and desktop/mobile image loading verified.
+
 - [x] Refresh all remaining Young Innovators supporting artwork to match the approved RILOYD hero/exhibition style; all six images loaded at desktop, tablet and phone widths with no overflow.
 
 - [x] Refresh the Young Innovators hero and exhibition image above “A clear start” with RILOYD branding; optimized local images verified at desktop, tablet and phone widths.
