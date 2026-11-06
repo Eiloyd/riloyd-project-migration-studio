@@ -194,7 +194,7 @@
   --challenge-glow: var(--festival-glow);
 }
 .diwali-decoration { position: absolute; left: 0; right: 0; top: 100%; height: 64px; overflow: hidden; pointer-events: none; z-index: 40; }
-.diwali-toran { height: 100%; background-repeat: repeat-x; background-size: auto 100%; background-position: center top; mix-blend-mode: lighten; filter: drop-shadow(0 6px 10px oklch(0 0 0 / .5)); }
+.diwali-toran { height: 100%; background-repeat: repeat-x; background-size: auto 100%; background-position: center top; filter: drop-shadow(0 6px 10px oklch(0 0 0 / .5)); }
 .diwali :is(h1,h2,h3) { text-shadow: var(--festival-text-glow); }
 .diwali [data-slot="button"]:not([data-variant="ghost"]):focus-visible { box-shadow: var(--festival-glow); }
 .diwali .young-challenge-page :is(#journey li,#fees-rewards article) { box-shadow: var(--festival-glow); }
@@ -485,5 +485,5 @@
 .diwali footer { background-image: var(--rangoli); background-size: 140px; border-top: 2px solid var(--primary); }
 @media (prefers-reduced-motion: reduce) { .diwali .diwali-sparkles, .diwali .solid-cta { animation: none; } }
 
-.diwali .hero-shell > .relative { padding-top: 5.5rem; }
-@media (max-width: 639px) { .diwali .hero-shell > .relative { padding-top: 4rem; } .diwali main section:not(.hero-shell):not(.contact-band) { background-size: 90px; } .diwali .solid-cta { width: 100%; justify-content: center; } }
+.diwali .hero-shell > .relative { padding-top: 3.5rem; }
+@media (max-width: 639px) { .diwali .hero-shell > .relative { padding-top: 2.75rem; } .diwali main section:not(.hero-shell):not(.contact-band) { background-size: 90px; } .diwali .solid-cta { width: 100%; justify-content: center; } }
