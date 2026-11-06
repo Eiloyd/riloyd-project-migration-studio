@@ -108,3 +108,4 @@
 - [x] Mobile footer: Follow Us moved into Contact below the office addresses
 - [x] Mobile footer: About Us 4mm left, Our People 8mm left so labels fit one line
 - [x] Mobile footer: Follow Us directly under the Corporate Office address (right side)
+- [ ] Diwali theme: toran decoration, default theme, mobile polish
