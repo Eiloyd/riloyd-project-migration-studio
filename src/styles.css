@@ -193,12 +193,13 @@
   --challenge-wine: oklch(0.24 0.06 25);
   --challenge-glow: var(--festival-glow);
 }
-.diwali-decoration { height: 74px; overflow: hidden; border-top: 1px solid var(--border); pointer-events: none; }
+.diwali-decoration { position: absolute; left: 0; right: 0; top: 100%; height: 64px; overflow: hidden; pointer-events: none; z-index: 40; }
+.diwali-toran { height: 100%; background-repeat: repeat-x; background-size: auto 100%; background-position: center top; filter: drop-shadow(0 6px 10px oklch(0 0 0 / .5)); }
 .diwali :is(h1,h2,h3) { text-shadow: var(--festival-text-glow); }
 .diwali [data-slot="button"]:not([data-variant="ghost"]):focus-visible { box-shadow: var(--festival-glow); }
 .diwali .young-challenge-page :is(#journey li,#fees-rewards article) { box-shadow: var(--festival-glow); }
 .diwali header { border-bottom-color: var(--primary); }
-@media (max-width: 639px) { .diwali-decoration { height: 58px; } }
+@media (max-width: 639px) { .diwali-decoration { height: 42px; } .diwali .hero-shell > .relative { padding-top: 4rem; } }
 .light section:has(> img.absolute), .light .why-panel:has(> img.absolute) {
   --background: oklch(0.055 0 0);
   --foreground: oklch(0.985 0 0);
@@ -483,3 +484,9 @@
 .diwali .stat-block strong { text-shadow: 0 0 18px oklch(0.82 0.17 75 / .6); }
 .diwali footer { background-image: var(--rangoli); background-size: 140px; border-top: 2px solid var(--primary); }
 @media (prefers-reduced-motion: reduce) { .diwali .diwali-sparkles, .diwali .solid-cta { animation: none; } }
+
+.diwali .hero-shell > .relative { padding-top: 3.5rem; }
+@media (max-width: 639px) { .diwali .hero-shell > .relative { padding-top: 2.75rem; } .diwali main section:not(.hero-shell):not(.contact-band) { background-size: 90px; } .diwali .solid-cta { width: 100%; justify-content: center; } }
+.diwali { --foreground: oklch(0.96 0.03 85); --soft: oklch(0.9 0.05 80); --muted-foreground: oklch(0.84 0.06 75); --card-foreground: oklch(0.96 0.03 85); --popover: oklch(0.2 0.06 20); --popover-foreground: oklch(0.96 0.03 85); --secondary: oklch(0.25 0.07 25); --secondary-foreground: oklch(0.96 0.03 85); --accent: oklch(0.28 0.08 30); --accent-foreground: oklch(0.92 0.12 85); }
+.diwali .eyebrow { color: oklch(0.86 0.14 82); }
+.diwali input::placeholder, .diwali textarea::placeholder { color: oklch(0.72 0.05 70); }

@@ -7,9 +7,9 @@ describe('three site themes', () => {
     expect(nextSiteTheme('light')).toBe('diwali');
     expect(nextSiteTheme('diwali')).toBe('dark');
   });
-  it('restores Diwali and falls back safely for removed themes', () => {
+  it('restores Diwali and defaults to Diwali', () => {
     expect(readSiteTheme('diwali')).toBe('diwali');
-    expect(readSiteTheme('unknown')).toBe('dark');
-    expect(readSiteTheme(null)).toBe('dark');
+    expect(readSiteTheme('unknown')).toBe('diwali');
+    expect(readSiteTheme(null)).toBe('diwali');
   });
 });

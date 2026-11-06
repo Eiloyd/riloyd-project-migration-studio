@@ -3,7 +3,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowRight, Instagram, Linkedin, Menu, Moon, Sun, Flame } from "lucide-react";
 import { applySiteTheme, nextSiteTheme, readSiteTheme, type SiteTheme } from '@/lib/site-theme';
-import diwaliLights from '@/assets/diwali-lights.webp';
+import diwaliToran from '@/assets/diwali-toran.webp';
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/local/riloyd-logo.png.optimized.nav.webp";
 import darkLogoAsset from "@/assets/local/riloyd-logo-dark.png.optimized.nav.webp";
@@ -18,7 +18,7 @@ export function SiteHeader() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const isGlobalPage = pathname.startsWith("/global-presence");
   const activeMarket = isGlobalPage ? findMarket(pathname.split("/")[2] ?? "") : undefined;
-  const [theme, setTheme] = useState<SiteTheme>("dark");
+  const [theme, setTheme] = useState<SiteTheme>("diwali");
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -58,7 +58,7 @@ export function SiteHeader() {
       {navItems.map((item) => activeMarket && activeMarket.slug !== "india" && item.label === "Services" ? <Link key={item.label} to="/global-presence/$slug" params={{ slug: activeMarket.slug }} hash="services" onClick={() => setMenuOpen(false)} className="border-b border-border py-3 text-sm font-semibold">Services</Link> : <Link key={item.label} to={item.to} onClick={() => setMenuOpen(false)} className="border-b border-border py-3 text-sm font-semibold last:border-0">{item.label}</Link>)}
       <Link to="/register" onClick={() => setMenuOpen(false)} className="py-3 text-sm font-bold text-primary">Register Now →</Link>
     </nav>}
-    {theme === 'diwali' && <div className="diwali-decoration" aria-hidden="true"><img src={diwaliLights} width={1280} height={427} alt="" decoding="async" className="h-full w-full object-cover" /></div>}
+    {theme === 'diwali' && <div className="diwali-decoration" aria-hidden="true"><div className="diwali-toran" style={{ backgroundImage: `url(${diwaliToran})` }} /></div>}
   </header>;
 }
 

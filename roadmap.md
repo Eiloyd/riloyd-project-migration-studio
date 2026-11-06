@@ -108,3 +108,7 @@
 - [x] Mobile footer: Follow Us moved into Contact below the office addresses
 - [x] Mobile footer: About Us 4mm left, Our People 8mm left so labels fit one line
 - [x] Mobile footer: Follow Us directly under the Corporate Office address (right side)
+- [x] Diwali theme: toran decoration, default theme, mobile polish
+- [x] Toran: transparent background, overlaps content on every page
+- [x] Diwali theme: readable font colours
+- [ ] Connect riloyd.in, publish, verify in Search Console
